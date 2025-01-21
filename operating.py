@@ -110,8 +110,124 @@ except FileNotFoundError:
 except Exception as e:
     print(f"An error occurred: {e}")
 
+import datetime
+import os
+import shutil
+
+def create_backup(source_directory):
+    if not os.path.exists(source_directory):
+        print(f"Error: The directory '{source_directory}' does not exist. ")
+        return
+    #Generate a timestamped backup name
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    backup_name = f"backup_{timestamp}"
+
+    #Create a zip archive of the source directory
+    shutil.make_archive(backup_name, 'zip', source_directory)
+    print(f"Backup Created: {backup_name}.zip")
+
+#Example usage
+create_backup("./example_directory")
+
+import subprocess
+import os
+def list_running_processes(output_file):
+    try:
+        # execute the system comaand to list processes 
+        command-['tasklist']if os.name=='nt' else ['ps','aux']
+        result=subprocess.run(command,capture_output=True,text=True)
+
+        # Save the output to a file
+        with open(output_file,'w')as file:
+            file.write(result.stdout)
+        print(f"process list saved to '{output_file}'")
+    except Exception as e:
+        print(f"error:{e}")
+# example uasge
+list_running_processes
 
 
 
 
+# importing required modules 
+import os
+import shutil
+from datetime import datetime, timedelta
 
+def file_cleanup_bot(directory, days_old):
+    # Create "Archive" folder if it doesn't exist
+    archive_folder = os.path.join(directory, "Archive")
+    if not os.path.exists(archive_folder):
+        os.makedirs(archive_folder)
+
+    # Get the current time
+    current_time = datetime.now()
+    
+    # Scan files in the directory
+    for filename in os.listdir(directory):
+        file_path = os.path.join(directory, filename)
+
+        # Skip the Archive folder itself
+        if filename == "Archive":
+            continue
+
+        # Check if it's a file
+        if os.path.isfile(file_path):
+            # Get the file's last modified time
+            file_mtime = datetime.fromtimestamp(os.path.getmtime(file_path))
+            
+            # Calculate the age of the file
+            file_age = current_time - file_mtime
+            
+            # Move files older than specified days to "Archive"
+            if file_age > timedelta(days=days_old):
+                shutil.move(file_path, archive_folder)
+                print(f"Moved: {file_path} to {archive_folder}")
+
+    # Ask user to delete the "Archive" folder
+    user_input = input("Do you want to delete the 'Archive' folder? (yes/no): ").strip().lower()
+    if user_input == "yes":
+        shutil.rmtree(archive_folder)
+        print("Archive folder deleted.")
+    else:
+        print("Archive folder kept.")
+
+
+directory_path = input("Enter the directory path: ").strip()
+days = int(input("Enter the number of days: "))
+file_cleanup_bot(directory_path, days)
+
+import os
+import platform
+import shutil
+import subprocess
+
+def generate_system_diagnostics_report():
+    report = []
+
+    # Current working directory
+    cwd = os.getcwd()
+    report.append(f"Current Working Directory: {cwd}")
+
+    # Disk usage of the current directory
+    total, used, free = shutil.disk_usage(cwd)
+    report.append(f"Disk Usage: Total: {total // (1024**3)} GB, Used: {used // (1024**3)} GB, Free: {free // (1024**3)} GB")
+
+    # System information
+    os_name = platform.system()
+    os_version = platform.version()
+    processor = platform.processor()
+    memory_info = subprocess.run(['free', '-h'], text=True, capture_output=True).stdout
+    report.append(f"Operating System: {os_name} {os_version}")
+    report.append(f"Processor: {processor}")
+    report.append("Memory Info:\n" + memory_info)
+
+    # Save report to a text file
+    report_path = os.path.join(cwd, "system_diagnostics_report.txt")
+    with open(report_path, "w") as file:
+        file.write("\n".join(report))
+    
+    print(f"System Diagnostics Report saved to: {report_path}")
+
+# Example usage
+generate_system_diagnostics_report()
