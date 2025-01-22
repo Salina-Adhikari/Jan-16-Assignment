@@ -1,0 +1,64 @@
+Current Working Directory: C:\Users\User\OneDrive\Desktop\Assignment2
+Disk Usage:
+  Total: 117.96 GB
+  Used: 86.33 GB
+  Free: 31.63 GB
+System Information:
+
+Host Name:                     PENNYWISE
+OS Name:                       Microsoft Windows 11 Pro
+OS Version:                    10.0.26100 N/A Build 26100
+OS Manufacturer:               Microsoft Corporation
+OS Configuration:              Standalone Workstation
+OS Build Type:                 Multiprocessor Free
+Registered Owner:              User
+Registered Organization:       
+Product ID:                    00331-10000-00001-AA024
+Original Install Date:         11/26/2024, 8:48:41 AM
+System Boot Time:              1/17/2025, 7:56:43 AM
+System Manufacturer:           Dell Inc.
+System Model:                  Vostro 3400
+System Type:                   x64-based PC
+Processor(s):                  1 Processor(s) Installed.
+                               [01]: Intel64 Family 6 Model 140 Stepping 1 GenuineIntel ~2419 Mhz
+BIOS Version:                  Dell Inc. 1.34.0, 11/15/2024
+Windows Directory:             C:\WINDOWS
+System Directory:              C:\WINDOWS\system32
+Boot Device:                   \Device\HarddiskVolume2
+System Locale:                 en-us;English (United States)
+Input Locale:                  en-us;English (United States)
+Time Zone:                     (UTC+05:45) Kathmandu
+Total Physical Memory:         7,919 MB
+Available Physical Memory:     2,221 MB
+Virtual Memory: Max Size:      12,271 MB
+Virtual Memory: Available:     2,864 MB
+Virtual Memory: In Use:        9,407 MB
+Page File Location(s):         C:\pagefile.sys
+Domain:                        WORKGROUP
+Logon Server:                  \\PENNYWISE
+Hotfix(s):                     3 Hotfix(s) Installed.
+                               [01]: KB5049622
+                               [02]: KB5050009
+                               [03]: KB5050387
+Network Card(s):               2 NIC(s) Installed.
+                               [01]: Intel(R) Wireless-AC 9462
+                                     Connection Name: Wi-Fi
+                                     DHCP Enabled:    Yes
+                                     DHCP Server:     192.168.1.254
+                                     IP address(es)
+                                     [01]: 192.168.1.181
+                                     [02]: fe80::e378:f380:155a:be25
+                                     [03]: 2400:1a00:b040:536c:3933:fb38:ccb0:cc1b
+                                     [04]: 2400:1a00:b040:536c:aac3:2ca7:c463:2fbe
+                               [02]: Realtek PCIe GbE Family Controller
+                                     Connection Name: Ethernet 2
+                                     Status:          Media disconnected
+Virtualization-based security: Status: Not enabled
+                               App Control for Business policy: Enforced
+                               App Control for Business user mode policy: Off
+                               Security Features Enabled:
+Hyper-V Requirements:          VM Monitor Mode Extensions: Yes
+                               Virtualization Enabled In Firmware: Yes
+                               Second Level Address Translation: Yes
+                               Data Execution Prevention Available: Yes
+
